@@ -3,10 +3,10 @@ const cart = document.querySelector("#cart");
 const productList = document.querySelector("#product-list");
 const cartIcon = document.getElementById('cart-icon');
 
-// array to hold cart items
+
 let cartItems = [];
 
-// fetch products from an API
+
 async function fetchProducts() {
     try {
         const response = await fetch('https://fakestoreapi.com/products');
@@ -22,7 +22,7 @@ async function fetchProducts() {
     }
 }
 
-// function to display products
+
 function displayProducts(products) {
     productList.innerHTML = ''; 
     products.forEach(product => {
@@ -53,7 +53,7 @@ function displayProducts(products) {
     });
 }
 
-// function for adding products to cart
+
 function addToCart(productTitle) {
     if (!cartItems.includes(productTitle)) {
         cartItems.push(productTitle); 
@@ -65,13 +65,13 @@ function addToCart(productTitle) {
     }
 }
 
-// function to update the cart count
+
 function updateCartCount() {
     const cartCount = document.querySelector("#cart-count");
     cartCount.textContent = cartItems.length; 
 }
 
-// function to update the cart display
+
 function updateCartDisplay() {
     cart.innerHTML = ''; 
     if (cartItems.length === 0) {
